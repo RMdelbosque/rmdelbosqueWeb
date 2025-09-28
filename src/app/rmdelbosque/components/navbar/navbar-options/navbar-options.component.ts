@@ -1,8 +1,35 @@
 import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+
+interface MenuOptions {
+  label: string;
+  route: string;
+}
 
 @Component({
   selector: 'navbar-options',
-  imports: [],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './navbar-options.component.html'
 })
-export class NavbarOptionsComponent { }
+export class NavbarOptionsComponent {
+
+  menuOptions: MenuOptions[] = [
+    {
+      label: 'Home',
+      route: ''
+    },
+    {
+      label: 'Sobre mi',
+      route: '/about'
+    },
+    {
+      label: 'Portolio',
+      route: '/portfolio'
+    },
+    {
+      label: 'Contacto',
+      route: '/contact'
+    },
+  ]
+
+}
