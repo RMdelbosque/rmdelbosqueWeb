@@ -20,15 +20,15 @@ export class NavbarOptionsComponent {
     },
     {
       label: 'Sobre mi',
-      route: '/about'
+      route: 'about'
     },
     {
       label: 'Portolio',
-      route: '/portfolio'
+      route: 'portfolio'
     },
     {
       label: 'Contacto',
-      route: '/contact'
+      route: 'contact'
     },
   ]
 

@@ -1,0 +1,32 @@
+<div class="flex flex-col items-start gap-6 p-4 w-full
+            bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+  <h2 class="text-2xl font-semibold">Mi Experiencia</h2>
+
+  <div class="flex items-center gap-4 overflow-x-auto w-full">
+    @for (exp of visibleExperiences; track exp.title; let last = $last) {
+      <div class="flex items-center gap-4 h-40" @slideIn>
+        <!-- Tarjeta -->
+        <div class="w-72 h-30 rounded-xl shadow-md p-4 flex flex-col justify-center
+                    bg-sky-50 text-gray-900 dark:bg-gray-700 dark:text-gray-100">
+          <h3 class="text-lg font-bold">{{ exp.title }}</h3>
+          <p class="text-sm">{{ exp.description }}</p>
+        </div>
+
+        <!-- Flechas -->
+        @if (!last) {
+          <div class="text-3xl text-gray-400 dark:text-gray-500">
+            <i class="fa-solid fa-circle-arrow-right"></i>
+          </div>
+        } @else if (index < experiences.length - 1) {
+          <button
+            (click)="next()"
+            class="text-3xl text-sky-600 hover:text-sky-800 dark:text-sky-400 dark:hover:text-sky-300 transition-colors"
+            aria-label="Siguiente"
+          >
+            <i class="fa-solid fa-circle-arrow-right"></i>
+          </button>
+        }
+      </div>
+    }
+  </div>
+</div>
