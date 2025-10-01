@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ThemeService } from './rmdelbosque/services/Themes.service';
+import { ThemeService } from './rmdelbosque/services/themes.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,4 @@ import { ThemeService } from './rmdelbosque/services/Themes.service';
 
 export class AppComponent {
   title = 'rmdelbosque';
-  constructor(private theme: ThemeService) {
-  this.theme.initTheme();
-}
 }

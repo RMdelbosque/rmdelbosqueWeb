@@ -1,8 +1,10 @@
 module.exports = {
-  darkMode: 'class', // 👈 importante
-  content: ['./src/**/*.{html,ts}'],
-  theme: {
-    extend: {},
-  },
+  darkMode: 'class',
+  content: ["./src/**/*.{html,ts}"],
+  safelist: [
+    { pattern: /dark:bg-.*/ },
+    { pattern: /dark:text-.*/ },
+  ],
+  theme: { extend: {} },
   plugins: [],
 }
