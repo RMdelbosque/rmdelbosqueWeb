@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TimelineAnimatedComponent } from "../../components/timeline-animated/timeline-animated.component";
+import { TimelineAnimatedComponent } from "../../components/timeline/timeline.component";
 
 @Component({
   selector: 'contact-page',
