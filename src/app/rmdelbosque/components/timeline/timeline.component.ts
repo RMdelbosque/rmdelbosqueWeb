@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ESTUDIOS, LABORAL, TimelineItem } from 'src/app/data/timeline-data';
+import { ESTUDIOS, LABORAL, TimelineItem } from '../../interfaces/items.interface';
 
 @Component({
   selector: 'app-timeline',
