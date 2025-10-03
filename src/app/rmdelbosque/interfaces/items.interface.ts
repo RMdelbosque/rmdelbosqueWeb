@@ -20,7 +20,7 @@ export const LABORAL: TimelineItem[] = [
     date: '07/2019 - 12/2024',
     company: 'CEV Online',
     link: 'https://www.cev.com/',
-    description: 'MadridResponsable de la revisión, evaluación y corrección de proyectos de videojuegosdesarrollados en Unity y C#.'
+    description: 'Responsable de la revisión, evaluación y corrección de proyectos de videojuegosdesarrollados en Unity y C#.'
   },
   {
     title: 'Desarrollador Junior de AR y VR',
@@ -42,22 +42,22 @@ export const ESTUDIOS: TimelineItem[] = [
   {
     title: 'Curso Online Angular',
     date: '2025',
-    description: 'Curso especializado en Angular.',
+    description: 'Curso de 30 horas especializado en Angular.',
     latest: true
   },
   {
     title: 'Técnico Superior en Desarrollo de Aplicaciones Multiplataforma',
     date: '2022 - 2024',
-    description: 'Formación en programación y bases de datos.'
+    description: 'FP Superior en Desarrollo multiplataforma, tanto aplicaciones móviles, como bases de datos y desarrollo web.'
   },
   {
     title: 'Técnico Superior en Animaciones 3D, Juegos y Entornos Interactivos',
     date: '2015 - 2017',
-    description: 'Formación en programación y bases de datos.',
+    description: 'FP Superior en desarrollo de videojuegos, tanto el diseño artistico con 2D y 3D, como la programación con motores gráficos como Unity.',
   },
   {
     title: 'Técnico en Sistemas Microinformáticos y Redes',
     date: '2012 - 2014',
-    description: 'Formación en programación y bases de datos.',
+    description: 'FP de Grado Medio especializado en informática, tanto software, como hardware. Aprendes la base de todo lo necesario para ser técnico informático.',
   }
 ];

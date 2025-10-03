@@ -16,7 +16,7 @@ export class NavbarOptionsComponent {
   menuOptions: MenuOptions[] = [
     {
       label: 'Home',
-      route: ''
+      route: 'home'
     },
     {
       label: 'Sobre mi',

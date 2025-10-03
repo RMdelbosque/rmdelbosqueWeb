@@ -1,5 +1,5 @@
-<div class="w-full max-w-2xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
-  <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">📩 Contáctame</h2>
+<div class="w-full max-w-2xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md transition-all duration-500">
+  <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 transition-all duration-500">📩 Contáctame</h2>
 
      <!-- Contacto directo -->
   <div class="mt-8 my-4 space-y-3 w-fit">
@@ -13,40 +13,47 @@
       <i class="fa-solid fa-phone text-xl"></i> Llamar
     </button>
   </div>
+    <div class="mt-8 my-4 space-y-3 w-fit">
+    <a target="_blank"
+       class="flex items-center gap-3 px-4 py-2 rounded-lg bg-red-500 text-white font-medium hover:bg-red-600">
+      <i class="fa-solid fa-envelope text-xl"></i> Correo: rodrigo.m.delbosque&#64;gmail.com
+    </a>
+  </div>
+
 
   <form (submit)="sendEmail($event)" class="space-y-4">
     <div>
-      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre *</label>
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white transition-all duration-500">Nombre *</label>
       <input type="text" [(ngModel)]="formData.name" name="name" required
         class="w-full p-2.5 border rounded-lg bg-gray-50 border-gray-300 text-sm
-               dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+               dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all duration-500">
     </div>
 
     <div>
-      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correo electrónico *</label>
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white transition-all duration-500">Correo electrónico *</label>
       <input type="email" [(ngModel)]="formData.email" name="email" required
         class="w-full p-2.5 border rounded-lg bg-gray-50 border-gray-300 text-sm
-               dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+               dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all duration-500">
     </div>
 
     <div>
-      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Teléfono</label>
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white transition-all duration-500">Teléfono</label>
       <input type="tel" [(ngModel)]="formData.phone" name="phone"
         class="w-full p-2.5 border rounded-lg bg-gray-50 border-gray-300 text-sm
-               dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+               dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all duration-500">
     </div>
 
     <div>
-      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mensaje *</label>
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white transition-all duration-500">Mensaje *</label>
       <textarea [(ngModel)]="formData.message" name="message" rows="4" required
         class="w-full p-2.5 border rounded-lg bg-gray-50 border-gray-300 text-sm
-               dark:bg-gray-700 dark:border-gray-600 dark:text-white"></textarea>
+               dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all duration-500"></textarea>
     </div>
 
     <button type="submit"
       [disabled]="sending"
       class="w-full py-2.5 px-5 text-white font-medium rounded-lg bg-sky-600 hover:bg-sky-700
-             dark:bg-sky-500 dark:hover:bg-sky-400 transition-colors disabled:opacity-50">
+             dark:bg-sky-500 dark:hover:bg-sky-400 disabled:opacity-50 transition-all duration-500">
       {{ sending ? "Enviando..." : "Enviar" }}
     </button>
 
