@@ -4,7 +4,7 @@ import { environment } from '@environments/environment';
 @Component({
   selector: 'app-presentacion',
   imports: [],
-  templateUrl: './presentacion.component.html'
+  templateUrl: './presentation.component.html'
 })
 export class PresentacionComponent {
   envs = environment;

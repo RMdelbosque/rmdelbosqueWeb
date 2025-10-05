@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { TimelineAnimatedComponent } from "../../components/timeline/timeline.component";
-import { PresentacionComponent } from '../../components/presentacion/presentacion.component';
+import { AbaoutMeComponent } from "../../components/abaout-me/abaout-me.component";
 
 @Component({
   selector: 'about-me-page',
-  imports: [TimelineAnimatedComponent, PresentacionComponent],
+  imports: [AbaoutMeComponent],
   templateUrl: './about-me-page.component.html',
 })
 export default class AboutMePageComponent { }

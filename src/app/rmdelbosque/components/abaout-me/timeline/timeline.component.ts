@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ESTUDIOS, LABORAL, TimelineItem } from '../../interfaces/items.interface';
+import { ESTUDIOS, LABORAL, TimelineItem } from '../../../interfaces/items.interface';
 
 @Component({
   selector: 'app-timeline',
@@ -8,7 +8,7 @@ import { ESTUDIOS, LABORAL, TimelineItem } from '../../interfaces/items.interfac
   imports: [CommonModule],
   templateUrl: './timeline.component.html'
 })
-export class TimelineAnimatedComponent {
+export class TimelineComponent {
   // @Input() compact = false;
   // expanded = false;
 
