@@ -1,70 +1,80 @@
-<div class="w-full max-w-2xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md transition-all duration-500">
-  <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 transition-all duration-500">📩 Contáctame</h2>
+<div class="max-w-5xl mx-auto px-4 py-12">
 
-     <!-- Contacto directo -->
-  <div class="mt-8 my-4 space-y-3 w-fit">
+  <!-- Título -->
+  <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white transition-all duration-500">
+    📩 Contáctame
+  </h2>
+
+  <!-- Sección de contacto directo -->
+  <div class="flex flex-wrap gap-4 mb-10">
     <a href="https://wa.me/34654859387" target="_blank"
-       class="flex items-center gap-3 px-4 py-2 rounded-lg bg-green-500 text-white font-medium hover:bg-green-600">
-      <i class="fa-brands fa-whatsapp text-xl"></i> WhatsApp
+      class="flex items-center gap-3 px-4 py-2 rounded-md bg-green-500 text-white font-medium hover:bg-green-600 transition-all duration-300">
+      <i class="fa-brands fa-whatsapp text-xl"></i>
+      WhatsApp
     </a>
 
     <button (click)="callPhone()"
-       class="flex items-center gap-3 px-4 py-2 rounded-lg bg-blue-500 text-white font-medium hover:bg-blue-600 w-full">
-      <i class="fa-solid fa-phone text-xl"></i> Llamar
+      class="flex items-center gap-3 px-4 py-2 rounded-md bg-blue-500 text-white font-medium hover:bg-blue-600 transition-all duration-300">
+      <i class="fa-solid fa-phone text-xl"></i>
+      Llamar
     </button>
-  </div>
-    <div class="mt-8 my-4 space-y-3 w-fit">
+
     <a target="_blank"
-       class="flex items-center gap-3 px-4 py-2 rounded-lg bg-red-500 text-white font-medium hover:bg-red-600">
-      <i class="fa-solid fa-envelope text-xl"></i> Correo: rodrigo.m.delbosque&#64;gmail.com
+      class="flex items-center gap-3 px-4 py-2 rounded-md bg-red-500 text-white font-medium hover:bg-red-600 transition-all duration-300">
+      <i class="fa-solid fa-envelope text-xl"></i>
+      rodrigo.m.delbosque&#64;gmail.com
     </a>
   </div>
 
+  <!-- Formulario -->
+  <form (submit)="sendEmail($event)" class="grid gap-6">
 
-  <form (submit)="sendEmail($event)" class="space-y-4">
+    <!-- Nombre -->
     <div>
-      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white transition-all duration-500">Nombre *</label>
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre *</label>
       <input type="text" [(ngModel)]="formData.name" name="name" required
-        class="w-full p-2.5 border rounded-lg bg-gray-50 border-gray-300 text-sm
-               dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all duration-500">
+        class="w-full p-3 border rounded-md bg-transparent border-gray-300 text-sm
+               dark:border-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300">
     </div>
 
+    <!-- Correo -->
     <div>
-      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white transition-all duration-500">Correo electrónico *</label>
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correo electrónico *</label>
       <input type="email" [(ngModel)]="formData.email" name="email" required
-        class="w-full p-2.5 border rounded-lg bg-gray-50 border-gray-300 text-sm
-               dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all duration-500">
+        class="w-full p-3 border rounded-md bg-transparent border-gray-300 text-sm
+               dark:border-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300">
     </div>
 
+    <!-- Teléfono -->
     <div>
-      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white transition-all duration-500">Teléfono</label>
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Teléfono</label>
       <input type="tel" [(ngModel)]="formData.phone" name="phone"
-        class="w-full p-2.5 border rounded-lg bg-gray-50 border-gray-300 text-sm
-               dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all duration-500">
+        class="w-full p-3 border rounded-md bg-transparent border-gray-300 text-sm
+               dark:border-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300">
     </div>
 
+    <!-- Mensaje -->
     <div>
-      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white transition-all duration-500">Mensaje *</label>
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mensaje *</label>
       <textarea [(ngModel)]="formData.message" name="message" rows="4" required
-        class="w-full p-2.5 border rounded-lg bg-gray-50 border-gray-300 text-sm
-               dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all duration-500"></textarea>
+        class="w-full p-3 border rounded-md bg-transparent border-gray-300 text-sm
+               dark:border-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all duration-300"></textarea>
     </div>
 
-    <button type="submit"
-      [disabled]="sending"
-      class="w-full py-2.5 px-5 text-white font-medium rounded-lg bg-sky-600 hover:bg-sky-700
-             dark:bg-sky-500 dark:hover:bg-sky-400 disabled:opacity-50 transition-all duration-500">
-      {{ sending ? "Enviando..." : "Enviar" }}
+    <!-- Botón de envío -->
+    <button type="submit" [disabled]="sending"
+      class="w-full py-3 px-5 text-white font-medium rounded-md bg-sky-600 hover:bg-sky-700
+             dark:bg-sky-500 dark:hover:bg-sky-400 disabled:opacity-50 transition-all duration-300">
+      {{ sending ? 'Enviando...' : 'Enviar' }}
     </button>
 
+    <!-- Mensajes -->
     @if (success) {
-      <p class="mt-2 text-green-500">{{ success }}</p>
+      <p class="text-green-500 text-sm mt-2">{{ success }}</p>
     }
     @if (error) {
-      <p class="mt-2 text-red-500">{{ error }}</p>
+      <p class="text-red-500 text-sm mt-2">{{ error }}</p>
     }
   </form>
-
-
 
 </div>

@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { NavbarIconComponent } from './navbar-icon/navbar-icon.component';
 import { NavbarOptionsComponent } from './navbar-options/navbar-options.component';
 import { ThemeButtonComponent } from "./theme-button/theme-button.component";
@@ -9,5 +9,13 @@ import { ThemeButtonComponent } from "./theme-button/theme-button.component";
   templateUrl: './navbar.component.html'
 })
 export class NavbarComponent {
+  isMenuOpen = false;
 
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
 }
