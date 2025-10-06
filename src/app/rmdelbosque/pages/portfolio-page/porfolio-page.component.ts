@@ -1,8 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { PortfolioComponent } from "../../components/portfolio/portfolio.component";
+import { GithubService } from '../../services/github.service';
 
 @Component({
   selector: 'porfolio-page',
-  imports: [],
+  imports: [PortfolioComponent],
   templateUrl: './porfolio-page.component.html',
 })
-export default class PorfolioPageComponent { }
+export default class PorfolioPageComponent {
+  gitHubService = inject(GithubService);
+}
