@@ -1,21 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "./rmdelbosque/components/navbar/navbar.component";
-import * as AOS from 'aos';
-
+import { FooterComponent } from "./rmdelbosque/components/footer/footer.component";
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'rmdelbosque';
-  ngOnInit() {
-    AOS.init({
-      duration: 800, // duración de la animación en ms
-      once: true, // solo animar una vez
-    });
-  }
 }

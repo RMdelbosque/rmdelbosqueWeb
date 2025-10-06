@@ -27,14 +27,14 @@
     <!-- Zona de contenido (derecha) -->
     <div class="flex-1">
       @if (active === 'presentation') {
-        <div class="transition-opacity duration-300" data-aos="flip-left">
+        <div data-aos="flip-left">
           <app-presentacion />
           <br>
         </div>
       }
 
       @if (active === 'skills') {
-        <div class="transition-opacity duration-300" data-aos="flip-left">
+        <div data-aos="flip-left">
           <app-skills />
         </div>
       }
