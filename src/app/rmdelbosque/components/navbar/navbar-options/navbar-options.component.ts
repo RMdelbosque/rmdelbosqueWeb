@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 interface MenuOptions {
@@ -12,6 +12,7 @@ interface MenuOptions {
   templateUrl: './navbar-options.component.html'
 })
 export class NavbarOptionsComponent {
+  @Output() closeMenu = new EventEmitter<void>();
 
   menuOptions: MenuOptions[] = [
     {
@@ -31,5 +32,4 @@ export class NavbarOptionsComponent {
       route: 'contact'
     },
   ]
-
 }

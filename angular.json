@@ -35,7 +35,8 @@
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/aos/dist/aos.js"
+              "node_modules/aos/dist/aos.js",
+              "node_modules/flowbite/dist/flowbite.min.js"
             ]
           },
           "configurations": {
