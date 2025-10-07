@@ -8,3 +8,10 @@ html, body {
   min-height: 100vh; /* que cubra toda la pantalla */
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.home_img {
+  mask-image: linear-gradient(
+    blanck 80%,
+    transparent
+  );
+}
