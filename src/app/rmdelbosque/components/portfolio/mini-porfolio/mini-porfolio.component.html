@@ -5,13 +5,12 @@
 
   <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
     @for (repo of featuredProjects(); track repo.name) {
-      <app-github-repo-list [gitHubRepo]="repo" />
+    <app-github-repo-list [gitHubRepo]="repo" />
     }
   </div>
 
   <div class="text-center mt-8">
-    <a routerLink="/portfolio"
-       class="text-sky-600 hover:text-sky-700 font-medium">
+    <a routerLink="/portfolio" class="text-sky-600 hover:text-sky-700 font-medium">
       Ver todos los proyectos →
     </a>
   </div>

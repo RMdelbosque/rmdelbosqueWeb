@@ -39,12 +39,12 @@ export const LABORAL: TimelineItem[] = [
 ];
 
 export const ESTUDIOS: TimelineItem[] = [
-  {
-    title: 'Curso Online Angular',
-    date: '2025',
-    description: 'Curso de 30 horas especializado en Angular.',
-    latest: true
-  },
+  // {
+  //   title: 'Curso Online Angular',
+  //   date: '2025',
+  //   description: 'Curso de 30 horas especializado en Angular.',
+  //   latest: true
+  // },
   {
     title: 'Técnico Superior en Desarrollo de Aplicaciones Multiplataforma',
     date: '2022 - 2024',
