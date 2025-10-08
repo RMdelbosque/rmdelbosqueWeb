@@ -1,0 +1,16 @@
+.aptitudes-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  background: transparent;
+}
+
+.aptitudes-wrapper {
+  width: 760px;
+  height: 420px;
+  transform: scale(0.7); /* 🔹 Escala todo el contenido */
+  transform-origin: center center;
+  overflow: hidden;
+  border-radius: 12px;
+}
