@@ -1,0 +1,46 @@
+<div class="flex flex-col items-center rounded-sm">
+  <div class="grid grid-cols-2 p-1 w-98 items-center">
+    <h1 class="text-game-text-title text-7xl font-bold">2048</h1>
+    <div class="flex flex-col items-end justify-center">
+
+      <!-- Botón "Nueva partida" -->
+      <button type="button"
+        class="text-game-white bg-game-base_button rounded-sm text-base font-semibold px-4 py-2 my-1" (click)="resetGame()">
+        Nueva partida
+      </button>
+
+      <!-- Contenedor de Puntos y Mejor -->
+      <div class="flex gap-2 my-1 items-center justify-center">
+
+        <!-- Bloque: Puntos -->
+        <div class="flex flex-col items-center bg-game_base_grid text-game_base_cell_2
+                text-base font-semibold rounded-sm px-3 py-1 min-w-[70px] max-w-[110px]">
+          <span>Puntos</span>
+          <p class="text-game-white text-lg truncate max-w-full">{{score}}</p>
+        </div>
+
+        <!-- Bloque: Mejor -->
+        <div class="flex flex-col items-center bg-game_base_grid text-game_base_cell_2
+                text-base font-semibold rounded-sm px-3 py-1 min-w-[70px] max-w-[110px]">
+          <span>Mejor</span>
+          <p class="text-game-white text-lg truncate max-w-full">{{bestScore}}</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="relative grid grid-cols-4 gap-3 p-4 bg-game_base_grid rounded-md shadow-xl">
+    @for (row of grid; track $index) {
+      @for (cell of row; track $index) {
+        <app-cell [cell]='cell'/>
+      }
+    }
+    @if (gameOver || (gameWon && !continuePlaying)) {
+      <app-game-over [gameWon]="this.gameWon" [score]="score" (restart)="resetGame()" (continue)="continueGame()"/>
+    }
+  </div>
+
+</div>

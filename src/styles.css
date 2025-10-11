@@ -8,3 +8,36 @@ html, body {
   min-height: 100vh; /* que cubra toda la pantalla */
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+
+@theme {
+  --color-midnight: #121063;
+  --color-tahiti: #3ab7bf;
+  --color-bermuda: #78dcca;
+
+  /* Colores base del juego */
+  --color-game-base: #faf8ef;
+  --color-game-base_button: #8f7a66;
+  --color-game-text-title: #776e65;
+  --color-game_base_grid: #bbada0;
+  --color-game_base_cell: #cdc1b4;
+
+  /* Celdas del 2048 */
+  --color-game_base_cell_2: #eee4da;
+  --color-game_base_cell_4: #ede0c8;
+  --color-game_base_cell_8: #f2b179;
+  --color-game_base_cell_16: #f59563;
+  --color-game_base_cell_32: #f67c5f;
+  --color-game_base_cell_64: #f65e3b;
+  --color-game_base_cell_128: #edcf72;
+  --color-game_base_cell_256: #edcc61;
+  --color-game_base_cell_512: #ebc851;
+  --color-game_base_cell_1024: #e7c93b;
+  --color-game_base_cell_2048: #eec22e;
+  --color-game_base_cell_4096: #3d3b34;
+  --color-game_base_cell_8192: #3c3a33;
+
+  /* Texto */
+  --color-game-text_1: #f9f6f2;
+  --color-game-white: #ffffff;
+}

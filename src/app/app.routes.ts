@@ -18,6 +18,10 @@ export const routes: Routes = [
     loadComponent: () => import('./rmdelbosque/pages/about-me-page/about-me-page.component')
   },
   {
+    path: 'game',
+    loadComponent: () => import('./rmdelbosque/pages/game-page/game-page.component')
+  },
+  {
     path: '**',
     redirectTo: 'home'
   }
