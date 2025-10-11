@@ -48,7 +48,7 @@ export class GameComponent {
     //Si quedan celdas vacías, añadimos dos numeros random
     if (emptyCells.length > 0) {
       const [i, j] = emptyCells[Math.floor(Math.random() * emptyCells.length)];
-      this.grid[i][j] = Math.random() < 0.9 ? 512 : 1024;
+      this.grid[i][j] = Math.random() < 0.9 ? 2 : 4;
     }
 
     // Revisamos si ha ganado o perdido.
