@@ -11,4 +11,5 @@ import { FooterComponent } from "./rmdelbosque/components/footer/footer.componen
 
 export class AppComponent {
   title = 'rmdelbosque';
+
 }

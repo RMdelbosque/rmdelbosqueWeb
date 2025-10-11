@@ -1,21 +1,21 @@
-<footer class="w-full bg-stone-200 dark:bg-slate-700 transition-colors duration-500 fixed
-             inset-x-0
-             bottom-0 border-t-2 border-gray-600 dark:border-gray-300 p-4">
-    <div class="lg:py-1">
-      <!-- <hr class="w-full border-gray-600 dark:border-gray-300 lg:my-4" /> -->
-      <div class="bg-red sm:flex sm:items-center sm:justify-between mx-20">
-          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">{{envs.companyName}}
-          </span>
-          <div class="flex mt-4 sm:justify-center sm:mt-0">
-              <a href="{{envs.linkedin}}" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5" target="_blank">
-                  <i class="fa-brands fa-linkedin text-grey-600 dark:text-white transition-all duration-500"></i>
-                  <span class="sr-only">Linkedin</span>
-              </a>
-              <a href="{{envs.github}}" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5" target="_blank">
-                  <i class="fa-brands fa-github text-grey-600 dark:text-white transition-all duration-500" ></i>
-                  <span class="sr-only">GitHub</span>
-              </a>
-          </div>
-      </div>
+<footer class="w-full bg-stone-200 dark:bg-slate-700 transition-colors duration-500 fixed inset-x-0 bottom-0 border-t-2 border-gray-600 dark:border-gray-300 p-4">
+  <div class="flex items-center justify-between gap-4 px-4 sm:px-20 min-w-0">
+    <!-- Nombre: ocupa el espacio disponible y se trunca si hace falta -->
+    <span class="flex-1 min-w-0 text-sm text-gray-500 dark:text-gray-400 truncate">
+      {{ envs.companyName }}
+    </span>
+
+    <!-- Iconos: no se encogen, siempre a la derecha -->
+    <div class="flex items-center gap-4 flex-none">
+      <a href="{{ envs.linkedin }}" target="_blank"
+         class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin fa-lg"></i>
+      </a>
+
+      <a href="{{ envs.github }}" target="_blank"
+         class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors" aria-label="GitHub">
+        <i class="fa-brands fa-github fa-lg"></i>
+      </a>
     </div>
+  </div>
 </footer>

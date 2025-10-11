@@ -28,6 +28,10 @@ export class NavbarOptionsComponent {
       route: 'portfolio'
     },
     {
+      label: 'Juego 2048',
+      route: 'game'
+    },
+    {
       label: 'Contacto',
       route: 'contact'
     },
