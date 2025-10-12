@@ -3,6 +3,7 @@ import { GameOverComponent } from "./game-over/game-over.component";
 import { CommonModule } from '@angular/common';
 import { CellComponent } from "./cell/cell.component";
 
+
 @Component({
   selector: 'app-game',
   imports: [GameOverComponent, CommonModule, CellComponent],
@@ -16,6 +17,11 @@ export class GameComponent {
   gameOver = false;
   gameWon = false;
   continuePlaying = false;
+
+  touchStartX = 0;
+  touchStartY = 0;
+  touchEndX = 0;
+  touchEndY = 0;
 
   ngOnInit() {
     const savedBest = localStorage.getItem('bestScore');
@@ -49,6 +55,7 @@ export class GameComponent {
     if (emptyCells.length > 0) {
       const [i, j] = emptyCells[Math.floor(Math.random() * emptyCells.length)];
       this.grid[i][j] = Math.random() < 0.9 ? 2 : 4;
+      this.grid = this.grid.map(row => [...row]);
     }
 
     // Revisamos si ha ganado o perdido.
@@ -122,15 +129,24 @@ export class GameComponent {
     };
 
     //Solo samos mover lateralmente, por lo que para los movimientos verticales, rotamos el grid.
-    const rotateGrid = () => {
-      this.grid = this.grid[0].map((_, colIndex) => this.grid.map(row => row[colIndex]).reverse());
+    // const rotateGrid = () => {
+    //   this.grid = this.grid[0].map((_, colIndex) => this.grid.map(row => row[colIndex]).reverse());
+    // };
+
+    const transposeGrid = () => {
+      this.grid = this.grid[0].map((_, colIndex) =>
+        this.grid.map(row => row[colIndex])
+      );
     };
+
+
 
     //Revisamos si se movió alguna ficha
     const moveLeft = () => {
       const newGrid = this.grid.map(row => mergeRow(row));
       if (JSON.stringify(newGrid) !== JSON.stringify(this.grid)) {
-        this.grid = newGrid;
+        // 👉 Nueva referencia profunda para activar Angular Change Detection
+        this.grid = newGrid.map(row => [...row]);
         moved = true;
       }
     };
@@ -146,14 +162,14 @@ export class GameComponent {
         this.grid = this.grid.map(row => row.reverse());
         break;
       case 'up':
-        rotateGrid();
+        this.grid = this.transpose(this.grid); // trasponer
         moveLeft();
-        this.grid = this.grid[0].map((_, colIndex) => this.grid.map(row => row[colIndex]));
+        this.grid = this.transpose(this.grid); // deshacer trasposición
         break;
       case 'down':
-        this.grid = this.grid[0].map((_, colIndex) => this.grid.map(row => row[colIndex]).reverse());
+        this.grid = this.transpose(this.grid).map(row => row.reverse());
         moveLeft();
-        this.grid = this.grid[0].map((_, colIndex) => this.grid.map(row => row[colIndex])).reverse();
+        this.grid = this.transpose(this.grid.map(row => row.reverse()));
         break;
     }
 
@@ -161,7 +177,36 @@ export class GameComponent {
     if (moved) this.addRandomTile();
   }
 
+  transpose(matrix: number[][]): number[][] {
+    return matrix[0].map((_, colIndex) => matrix.map(row => row[colIndex]));
+  }
 
+  handleGesture() {
+    const deltaX = this.touchEndX - this.touchStartX;
+    const deltaY = this.touchEndY - this.touchStartY;
+
+    const absX = Math.abs(deltaX);
+    const absY = Math.abs(deltaY);
+
+    // Evitar falsos toques pequeños (por ejemplo, cuando haces tap)
+    if (Math.max(absX, absY) < 40) return;
+
+    if (absX > absY) {
+      // Movimiento horizontal
+      if (deltaX > 0) {
+        this.move('right');
+      } else {
+        this.move('left');
+      }
+    } else {
+      // Movimiento vertical
+      if (deltaY > 0) {
+        this.move('down');
+      } else {
+        this.move('up');
+      }
+    }
+  }
 
   // Detectamos que tecla se ha pulsado y mandamos el movimiento up, down, left o rigth a this.move()
   @HostListener('window:keydown', ['$event'])
@@ -172,5 +217,18 @@ export class GameComponent {
       case 'ArrowLeft': this.move('left'); break;
       case 'ArrowRight': this.move('right'); break;
     }
+  }
+
+  @HostListener('touchstart', ['$event'])
+  onTouchStart(event: TouchEvent) {
+    this.touchStartX = event.touches[0].clientX;
+    this.touchStartY = event.touches[0].clientY;
+  }
+
+  @HostListener('touchend', ['$event'])
+  onTouchEnd(event: TouchEvent) {
+    this.touchEndX = event.changedTouches[0].clientX;
+    this.touchEndY = event.changedTouches[0].clientY;
+    this.handleGesture();
   }
 }

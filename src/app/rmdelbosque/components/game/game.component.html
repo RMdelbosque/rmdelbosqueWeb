@@ -1,46 +1,62 @@
 <div class="flex flex-col items-center rounded-sm">
   <div class="grid grid-cols-2 p-1 w-98 items-center">
-    <h1 class="text-game-text-title text-7xl font-bold">2048</h1>
-    <div class="flex flex-col items-end justify-center">
+    <div class="flex items-center gap-3">
+      <h1 class="text-game-text-title text-7xl font-bold">2048</h1>
 
+
+    </div>
+
+    <div class="flex flex-col items-end justify-center">
       <!-- Botón "Nueva partida" -->
       <button type="button"
-        class="text-game-white bg-game-base_button rounded-sm text-base font-semibold px-4 py-2 my-1" (click)="resetGame()">
+        class="text-game-white bg-game-base_button rounded-sm text-base font-semibold px-4 py-2 my-1"
+        (click)="resetGame()">
         Nueva partida
       </button>
 
       <!-- Contenedor de Puntos y Mejor -->
       <div class="flex gap-2 my-1 items-center justify-center">
-
         <!-- Bloque: Puntos -->
         <div class="flex flex-col items-center bg-game_base_grid text-game_base_cell_2
-                text-base font-semibold rounded-sm px-3 py-1 min-w-[70px] max-w-[110px]">
+          text-base font-semibold rounded-sm px-3 py-1 min-w-[70px] max-w-[110px]">
           <span>Puntos</span>
-          <p class="text-game-white text-lg truncate max-w-full">{{score}}</p>
+          <p class="text-game-white text-lg truncate max-w-full">{{ score }}</p>
         </div>
 
         <!-- Bloque: Mejor -->
         <div class="flex flex-col items-center bg-game_base_grid text-game_base_cell_2
-                text-base font-semibold rounded-sm px-3 py-1 min-w-[70px] max-w-[110px]">
+          text-base font-semibold rounded-sm px-3 py-1 min-w-[70px] max-w-[110px]">
           <span>Mejor</span>
-          <p class="text-game-white text-lg truncate max-w-full">{{bestScore}}</p>
+          <p class="text-game-white text-lg truncate max-w-full">{{ bestScore }}</p>
         </div>
-
       </div>
     </div>
-
   </div>
 
-
-  <div class="relative grid grid-cols-4 gap-3 p-4 bg-game_base_grid rounded-md shadow-xl">
+  <div
+    class="relative grid grid-cols-4 gap-3 p-4 bg-game_base_grid rounded-md shadow-xl touch-none overflow-hidden select-none will-change-transform">
     @for (row of grid; track $index) {
-      @for (cell of row; track $index) {
-        <app-cell [cell]='cell'/>
-      }
+    @for (cell of row; track $index) {
+    <app-cell [cell]="cell" />
     }
+    }
+
     @if (gameOver || (gameWon && !continuePlaying)) {
-      <app-game-over [gameWon]="this.gameWon" [score]="score" (restart)="resetGame()" (continue)="continueGame()"/>
+    <app-game-over [gameWon]="this.gameWon" [score]="score" (restart)="resetGame()" (continue)="continueGame()" />
     }
+  </div>
+
+  <!-- Tarjeta con enlace a GitHub -->
+  <div
+    class="mt-6 flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-md p-4 w-60 max-w-md">
+    <p class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">
+      Ver el proyecto:
+    </p>
+    <a href="https://github.com/RMdelbosque/game-2048" target="_blank" rel="noopener noreferrer"
+      class="flex items-center gap-2 px-4 py-2 text-white bg-gray-900 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-md transition-all duration-200 shadow-sm">
+      <i class="fa-brands fa-github text-2xl"></i>
+      <span class="font-medium">Abrir en GitHub</span>
+    </a>
   </div>
 
 </div>
