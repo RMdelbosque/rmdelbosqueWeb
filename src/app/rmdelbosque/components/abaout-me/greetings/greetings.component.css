@@ -1,4 +1,4 @@
-
+/*
 .subject {
 
   opacity: 1;
@@ -26,4 +26,7 @@
     opacity: 0;
     transform: scaleY(0);
   }
+} */
+.imghome {
+   mask-image: linear-gradient(black 70%, transparent 100%);
 }
