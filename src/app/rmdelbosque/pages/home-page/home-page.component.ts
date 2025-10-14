@@ -8,16 +8,6 @@ import { GreetingsComponent } from '../../components/abaout-me/greetings/greetin
   imports: [MiniPorfolioComponent, GreetingsComponent, SummaryComponent],
   templateUrl: './home-page.component.html'
 })
-// export default class HomePageComponent implements AfterViewInit {
-//   ngAfterViewInit(): void {
-//     // Esperamos un momento a que el DOM y los estilos estén aplicados
-//     setTimeout(() => {
-//       window.scrollTo({ top: 0, behavior: 'instant' }); // 🔥 fuerza reset completo
-//     }, 200); // puedes ajustar el delay (200–500 ms suele ir bien)
-//   }
-
-
-// }
 
 export default class HomePageComponent {
 

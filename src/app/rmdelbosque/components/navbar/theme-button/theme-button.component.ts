@@ -7,18 +7,6 @@ import { ThemeService } from 'src/app/rmdelbosque/services/themes.service';
   templateUrl: './theme-button.component.html'
 })
 export class ThemeButtonComponent {
- /* isDarkMode = signal(false);
-  private _document = inject(DOCUMENT);
-
-  constructor() {
-    effect(() => {
-      this._document.body.classList.toggle('dark', this.isDarkMode());
-    });
-  }
-
-  toggleTheme() {
-    this.isDarkMode.set(!this.isDarkMode());
-  }*/
 
   isDarkMode = signal(false);
 

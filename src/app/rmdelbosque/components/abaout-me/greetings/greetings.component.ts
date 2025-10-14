@@ -5,10 +5,9 @@ import { CommonModule } from '@angular/common';
   selector: 'app-greetings',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './greetings.component.html',
-  styleUrls: ['./greetings.component.css'],
+  templateUrl: './greetings.component.html'
 })
-// export class GreetingsComponent implements AfterViewInit, OnDestroy {
+
 export class GreetingsComponent {
 
 }
