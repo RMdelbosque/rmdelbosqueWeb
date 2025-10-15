@@ -1,20 +1,35 @@
-<div class="max-w-5xl mx-auto px-4">
+<div class="max-w-5xl mx-auto px-4 mt-4">
   <div class="md:flex md:items-start md:gap-6">
 
     <!-- Botonera (izquierda en desktop, arriba en móvil) -->
     <div class="flex gap-3 mb-4 md:mb-0 md:flex-col md:w-40">
-      <button type="button" (click)="select('presentation')" [attr.aria-pressed]="isActive('presentation')"
-        class="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium w-full transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500"
-        [ngClass]="isActive('presentation') ? 'bg-sky-600 text-white shadow' : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600'">
+      <button
+      type="button"
+      (click)="select('presentation')"
+      [attr.aria-pressed]="isActive('presentation')"
+      class="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium w-full transition-all focus:outline-none focus:ring-2 focus:ring-green_3 dark:focus:ring-green_5"
+      [ngClass]="
+        isActive('presentation')
+          ? 'bg-gradient-to-br from-green_3 to-green_5 text-black shadow-md'
+          : 'bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-green_100 dark:hover:bg-green_900/40'
+      ">
         <i class="fa-solid fa-user"></i>
         Presentación
       </button>
 
-      <button type="button" (click)="select('skills')" [attr.aria-pressed]="isActive('skills')"
-        class="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium w-full transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500"
-        [ngClass]="isActive('skills') ? 'bg-sky-600 text-white shadow' : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600'">
+
+      <button
+      type="button"
+      (click)="select('skills')"
+      [attr.aria-pressed]="isActive('skills')"
+      class="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium w-full transition-all focus:outline-none focus:ring-2 focus:ring-green_3 dark:focus:ring-green_5"
+      [ngClass]="
+        isActive('skills')
+          ? 'bg-gradient-to-br from-green_3 to-green_5 text-black shadow-md'
+          : 'bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-green_100 dark:hover:bg-green_900/40'
+      ">
         <i class="fa-solid fa-brain"></i>
-        Aptitudes
+        Presentación
       </button>
     </div>
 
