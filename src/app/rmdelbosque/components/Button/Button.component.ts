@@ -8,6 +8,7 @@ import { RouterLink } from '@angular/router';
 })
 export class ButtonComponent {
 
-  public link = input.required<string>();
+  public link = input<string>();
   public text = input.required<string>();
+  public href = input<string>();
  }

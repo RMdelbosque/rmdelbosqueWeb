@@ -1,11 +1,11 @@
 import { Component, computed } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { GithubService } from 'src/app/rmdelbosque/services/github.service';
 import { GithubRepoListComponent } from "../github-repo-list/github-repo-list.component";
+import { ButtonComponent } from '../../Button/Button.component';
 
 @Component({
   selector: 'app-mini-porfolio',
-  imports: [GithubRepoListComponent, RouterLink],
+  imports: [GithubRepoListComponent, ButtonComponent],
   templateUrl: './mini-porfolio.component.html'
 })
 export class MiniPorfolioComponent {

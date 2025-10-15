@@ -1,5 +1,29 @@
-<button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800" [routerLink]="link()">
-<span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
-{{text()}}
-</span>
+@if (href()) {
+<a [href]="href()" target="_blank" rel="noopener noreferrer" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group
+      bg-gradient-to-br from-green_3 to-green_5
+      group-hover:from-green_3 group-hover:to-green_5
+      dark:text-white dark:hover:text-gray-900
+      focus:ring-2 focus:outline-none focus:ring-green_1 dark:focus:ring-green_5">
+  <span
+    class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+    {{ text() }}
+  </span>
+</a>
+}
+
+@if (link()) {
+<button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group
+bg-gradient-to-br
+from-green_3 to-green_5
+group-hover:from-green_3 group-hover:to-green_5
+dark:text-white dark:hover:text-gray-900
+focus:ring-2
+focus:outline-none
+focus:ring-green_1
+dark:focus:ring-green_5" [routerLink]="link()">
+  <span
+    class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+    {{text()}}
+  </span>
 </button>
+}

@@ -10,6 +10,27 @@ html, body {
 }
 
 
+@keyframes shake {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(1px, -1px);
+  }
+  50% {
+    transform: translate(-1px, 1px);
+  }
+  75% {
+    transform: translate(1px, 1px);
+  }
+}
+
+.hover\\:animate-shake:hover {
+  animation: shake 0.2s ease-in-out;
+}
+
+
+
 
 @theme {
   --color-midnight: #121063;
@@ -41,4 +62,11 @@ html, body {
   /* Texto */
   --color-game-text_1: #f9f6f2;
   --color-game-white: #ffffff;
+
+    /* Paleta verde elegante */
+  --color-green_1: #003400;
+  --color-green_2: #006414;
+  --color-green_3: #009929;
+  --color-green_4: #5ccb5f;
+  --color-green_5: #98ff96;
 }
