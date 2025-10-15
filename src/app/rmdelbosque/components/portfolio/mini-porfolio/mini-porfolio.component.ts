@@ -16,6 +16,6 @@ export class MiniPorfolioComponent {
   featuredProjects = computed(() =>
     this.gihubRepos()
       .filter((r) => !r.fork)
-      .slice(0, 3)
+      .slice(0, 2)
   );
 }

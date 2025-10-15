@@ -3,27 +3,27 @@
   target="_blank"
   rel="noopener noreferrer"
   class="group block p-6 mt-4 bg-white border border-green_3/30 rounded-xl shadow-md shadow-green_3/30 dark:bg-gray-800 dark:border-green_4/40
-         transition-transform transform hover:-translate-y-1 hover:scale-[1.02] hover:animate-shake cursor-pointer
-         h-full flex flex-col justify-between"
+         transition-all transform hover:-translate-y-1 hover:scale-[1.02] hover:animate-shake cursor-pointer
+         h-full flex flex-col justify-between duration-500"
 >
   <div>
-    <h5 class="mb-2 text-2xl tracking-tight text-gray-900 dark:text-white truncate">
+    <h5 class="mb-2 text-2xl tracking-tight text-gray-900 dark:text-white truncate transition-colors duration-500">
       {{ gitHubRepo().name }}
     </h5>
 
-    <div class="flex justify-between text-sm text-gray-500 dark:text-gray-400 mb-3">
+    <div class="flex justify-between text-sm text-gray-500 dark:text-gray-400 mb-3 transition-colors duration-500">
       <span>{{ gitHubRepo().language || 'Desconocido' }}</span>
       <span>{{ gitHubRepo().updated_at | date: 'shortDate' }}</span>
     </div>
 
     <p
-      class="mb-4 font-normal text-gray-700 dark:text-gray-400 line-clamp-3"
+      class="mb-4 font-normal text-gray-700 dark:text-gray-400 line-clamp-3 transition-colors duration-500"
     >
       {{ gitHubRepo().description || 'Sin descripción' }}
     </p>
   </div>
 
-  <div class="text-green_2 dark:text-green_5 mt-auto text-right opacity-80 group-hover:opacity-100">
+  <div class="text-green_2 dark:text-green_5 mt-auto text-right opacity-80 group-hover:opacity-100 transition-colors duration-500">
     Ver en GitHub →
   </div>
 </a>

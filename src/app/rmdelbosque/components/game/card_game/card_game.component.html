@@ -1,0 +1,19 @@
+<section class="max-w-6xl mx-auto px-4 py-12 justify-center">
+  <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+    Juego 2048
+  </h2>
+
+  <a
+  routerLinkActive="/game"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="w-55 h-55 mt-10 justify-center text-center rounded-xl bg-game_base_cell_2048
+         transition-all transform hover:-translate-y-1 hover:scale-[1.02] hover:animate-shake cursor-pointer
+         flex flex-col duration-500 shadow-xl shadow-game_base_cell_2048/30"
+>
+  <div class="flex justify-center text-center text-6xl font-semibold text-game-text-title transition-colors duration-500">
+      <span>{{ 2048 }}</span>
+    </div>
+
+</a>
+</section>
