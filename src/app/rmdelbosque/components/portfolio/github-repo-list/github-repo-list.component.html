@@ -11,19 +11,19 @@
       {{ gitHubRepo().name }}
     </h5>
 
-    <div class="flex justify-between text-sm text-gray-500 dark:text-gray-400 mb-3 transition-colors duration-500">
+    <div class="flex justify-between text-lg text-gray-500 dark:text-gray-400 mb-3 transition-colors duration-500">
       <span>{{ gitHubRepo().language || 'Desconocido' }}</span>
       <span>{{ gitHubRepo().updated_at | date: 'shortDate' }}</span>
     </div>
 
     <p
-      class="mb-4 font-normal text-gray-700 dark:text-gray-400 line-clamp-3 transition-colors duration-500"
+      class="mb-4 text-lg text-gray-700 dark:text-gray-400 line-clamp-3 transition-colors duration-500"
     >
       {{ gitHubRepo().description || 'Sin descripción' }}
     </p>
   </div>
 
-  <div class="text-green_2 dark:text-green_5 mt-auto text-right opacity-80 group-hover:opacity-100 transition-colors duration-500">
+  <div class="text-green_2 text-lg dark:text-green_5 mt-auto text-right opacity-80 group-hover:opacity-100 transition-colors duration-500">
     Ver en GitHub →
   </div>
 </a>

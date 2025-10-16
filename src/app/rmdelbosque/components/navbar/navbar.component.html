@@ -3,15 +3,42 @@
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <navbar-icon />
 
-    <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-      <theme-button />
+    <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"
+      [attr.aria-expanded]="isMenuOpen">
+
+
+
+      <!-- 🟩 Redes + ThemeButton visibles en escritorio -->
+    <div class="hidden md:flex items-center space-x-4">
+      <a href="https://www.linkedin.com/in/rodrigo-del-bosque/" target="_blank" rel="noopener noreferrer"
+        class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+        <i class="fa-brands fa-linkedin fa-xl"></i>
+        <span class="sr-only">LinkedIn</span>
+      </a>
+
+      <a href="https://github.com/RMdelbosque" target="_blank" rel="noopener noreferrer"
+        class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+        <i class="fa-brands fa-github fa-xl"></i>
+        <span class="sr-only">GitHub</span>
+      </a>
+
+      <a href="mailto:rodrigo.m.delbosque@gmail.com" target="_blank" rel="noopener noreferrer"
+        class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+        <i class="fa-solid fa-envelope fa-xl group-hover:animate-shake"></i>
+        <span class="sr-only">Email</span>
+      </a>
+
+      <!-- 🌙 Botón de tema -->
+      <theme-button class="ms-3" />
+    </div>
+
 
       <button type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden
          hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-gray-200
          dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-menu"
         [attr.aria-expanded]="isMenuOpen" (click)="toggleMenu()">
         <span class="sr-only">Open main menu</span>
-        <i class="fa-solid fa-ellipsis-vertical text-green_3"></i>
+        <i class="fa-solid fa-ellipsis-vertical fa-xl text-black dark:text-white"></i>
       </button>
     </div>
 
@@ -19,6 +46,29 @@
     <div id="navbar-menu" class="w-full md:flex md:w-auto md:order-1 transition-all duration-300 ease-in-out"
       [class.hidden]="!isMenuOpen">
       <navbar-options (closeMenu)="closeMenu()"></navbar-options>
+
+      <div class="flex items-center justify-between" [class.hidden]="!isMenuOpen">
+        <div class="flex mt-4  justify-center">
+          <a href="https://www.linkedin.com/in/rodrigo-del-bosque/"
+            class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white ms-5">
+            <i class="fa-brands fa-linkedin fa-xl"></i>
+            <span class="sr-only">linkedin</span>
+          </a>
+          <a href="https://github.com/RMdelbosque"
+            class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white ms-5">
+            <i class="fa-brands fa-github fa-xl"></i>
+            <span class="sr-only">GitHub account</span>
+          </a>
+          <a ref="mailto:rodrigo.m.delbosque@gmail.com" target="_blank" rel="noopener noreferrer"
+            class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white ms-5">
+            <i class="fa-solid fa-envelope fa-xl group-hover:animate-shake"></i>
+            <span class="sr-only">Gmail</span>
+          </a>
+          <theme-button class="ms-3" />
+        </div>
+      </div>
+
     </div>
+
   </div>
 </nav>

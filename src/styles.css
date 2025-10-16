@@ -6,7 +6,11 @@ html, body {
   @apply bg-gradient-to-b from-white to-stone-200 dark:from-slate-900 dark:to-slate-700 text-gray-900 dark:text-gray-100 transition-colors duration-500;
   margin: 0;
   min-height: 100vh; /* que cubra toda la pantalla */
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+
+}
+
+html, body, button, span, a, h1, h2, p, div {
+font-family: calibri, "Helvetica", sans-serif;
 }
 
 
@@ -29,6 +33,11 @@ html, body {
   animation: shake 0.2s ease-in-out;
 }
 
+.stroke {
+
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #98ff96;
+}
 
 
 
@@ -69,4 +78,7 @@ html, body {
   --color-green_3: #009929;
   --color-green_4: #5ccb5f;
   --color-green_5: #98ff96;
+  --color-green_6: #c5f6b7;
+  --color-green_7: #E5F5E0;
+  --color-green_8: #F7FCF5;
 }

@@ -1,11 +1,12 @@
-<footer class="w-full bg-stone-200 dark:bg-slate-700 transition-colors duration-500 fixed inset-x-0 bottom-0 border-t-2 border-gray-600 dark:border-gray-300 p-4">
+<!-- <footer class="w-full bg-stone-200 dark:bg-slate-700 transition-colors duration-500 fixed inset-x-0 bottom-0 border-t-2 border-gray-600 dark:border-gray-300 p-4"> -->
+<!-- <footer class="w-full bg-stone-200 dark:bg-slate-700 transition-colors duration-500 border-t-2 border-gray-600 dark:border-gray-300 p-4">
+
   <div class="flex items-center justify-between gap-4 px-4 sm:px-20 min-w-0">
-    <!-- Nombre: ocupa el espacio disponible y se trunca si hace falta -->
-    <span class="flex-1 min-w-0 text-sm text-gray-500 dark:text-gray-400 truncate">
+
+    <span class="flex-1 min-w-0  text-lg text-gray-500 dark:text-gray-400 truncate">
       {{ envs.companyName }}
     </span>
 
-    <!-- Iconos: no se encogen, siempre a la derecha -->
     <div class="flex items-center gap-4 flex-none">
       <a href="{{ envs.linkedin }}" target="_blank"
          class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors" aria-label="LinkedIn">
@@ -17,5 +18,84 @@
         <i class="fa-brands fa-github fa-lg"></i>
       </a>
     </div>
+  </div>
+</footer> -->
+
+
+
+
+<footer class="bg-stone-200 dark:bg-slate-700 border-t border-gray-300 dark:border-gray-600 transition-colors duration-500">
+  <div class="mx-auto w-full max-w-screen-xl p-4 py-4 lg:py-4">
+    <div class="md:flex md:justify-between">
+      <div class="mb-6 md:mb-0">
+        <a href="https://flowbite.com/" class="flex items-center">
+          <!-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="FlowBite Logo" /> -->
+          <img src="img\LogoR_White.png" class="h-10  hidden dark:block transition-colors duration-500 mr-2"
+            alt="Flowbite Logo">
+          <img src="img\LogoR.png" class="h-10 dark:hidden mr-2" alt="Flowbite Logo">
+          <span class="self-center text-2xl  dark:text-white mt-6">{{envs.companyName}}</span>
+        </a>
+      </div>
+      <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+        <div>
+          <h2 class="mb-2  text-lg text-black font-semibold uppercase dark:text-white">Recursos</h2>
+          <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <li class="mb-2">
+              <a href="https://flowbite.com/" class="hover:underline text-lg">Flowbite</a>
+            </li>
+            <li class="mb-2">
+              <a href="https://tailwindcss.com/" class="hover:underline text-lg">Tailwind CSS</a>
+            </li>
+            <li>
+              <a href="https://michalsnik.github.io/aos/" class="hover:underline text-lg">AOS</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="mb-2  text-lg  text-black font-semibold uppercase dark:text-white">Sígueme</h2>
+          <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <li class="mb-2">
+              <a href="{{envs.linkedin}}" class="hover:underline text-lg">Github</a>
+            </li>
+            <li>
+              <a href="{{envs.linkedin}}" class="hover:underline text-lg">Linkedin</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="mb-2  text-lg  text-black font-semibold  uppercase dark:text-white">Contacta me</h2>
+          <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <li class="mb-2">
+              <a href="tel:654-85-93-87p34" alt="Call 654-85-93-87" class="hover:underline text-lg">Llamada </a>
+            </li>
+            <li class="mb-2">
+              <a href="https://wa.me/34654859387" target="_blank" rel="noopener noreferrer" class="hover:underline text-lg">WhatsApp</a>
+            </li>
+            <li>
+              <a href="mailto:rodrigo.m.delbosque@gmail.com" target="_blank" rel="noopener noreferrer" class="hover:underline text-lg">Correo</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- <hr class=" my-6 border-gray-400 sm:mx-auto dark:border-gray-400 lg:my-8" />
+    <div class="sm:flex sm:items-center sm:justify-between">
+      <span class=" text-lg text-gray-500 sm:text-center dark:text-gray-400">© 2025. Proyecto realizado por Rodrigo del Bosque
+      </span>
+      <div class="flex mt-4 sm:justify-center sm:mt-0">
+        <a href="https://www.linkedin.com/in/rodrigo-del-bosque/" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white ms-5">
+          <i class="fa-brands fa-linkedin fa-xl"></i>
+          <span class="sr-only">linkedin</span>
+        </a>
+        <a href="https://github.com/RMdelbosque" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white ms-5">
+          <i class="fa-brands fa-github fa-xl"></i>
+          <span class="sr-only">GitHub account</span>
+        </a>
+        <a ref="mailto:rodrigo.m.delbosque@gmail.com" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white ms-5">
+          <i class="fa-solid fa-envelope fa-xl group-hover:animate-shake"></i>
+          <span class="sr-only">Gmail</span>
+        </a>
+      </div>
+    </div> -->
   </div>
 </footer>

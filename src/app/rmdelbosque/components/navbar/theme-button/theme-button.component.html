@@ -1,18 +1,12 @@
 <label class="inline-flex items-center cursor-pointer">
-  <input
-    type="checkbox"
-    class="sr-only peer"
-    [checked]="isDarkMode()"
-    (change)="toggleTheme()"
-  >
-  <div
-    class="relative w-12 h-5 bg-gray-300 rounded-full peer dark:bg-gray-700
-           ring-2 ring-green_3 dark:ring-green_5
+  <input type="checkbox" class="sr-only peer" [checked]="isDarkMode()" (change)="toggleTheme()">
+  <div class="relative w-12 h-5 bg-gray-300 rounded-full peer dark:bg-gray-700
+           ring-1 ring-green_6 dark:ring-green_2
            after:content-[''] after:absolute after:top-[2px] after:left-[2px]
            after:bg-white after:border-gray-300 after:border after:rounded-full
            after:h-4 after:w-4 after:flex after:items-center after:justify-center
            after:text-xs after:transition-all peer-checked:after:translate-x-7
-           peer-checked:after:content-['☀️'] after:content-['🌙']
-           dark:peer-checked:after:bg-gray-800 dark:peer-checked:after:text-yellow-400"
-  ></div>
+           peer-checked:after:content-['🌙'] after:content-['☀️']
+           dark:peer-checked:after:bg-gray-800 dark:peer-checked:after:text-yellow-400">
+  </div>
 </label>

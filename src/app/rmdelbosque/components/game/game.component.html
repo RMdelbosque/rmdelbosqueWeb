@@ -1,4 +1,4 @@
-<div class="flex flex-col items-center rounded-sm">
+<div class="flex flex-col items-center rounded-sm mt-2">
   <div class="grid grid-cols-2 p-1 w-98 items-center">
     <div class="flex items-center gap-3">
       <h1 class="text-game-text-title text-7xl font-bold">2048</h1>
@@ -9,7 +9,7 @@
     <div class="flex flex-col items-end justify-center">
       <!-- Botón "Nueva partida" -->
       <button type="button"
-        class="text-game-white bg-game-base_button rounded-sm text-base px-4 py-2 my-1"
+        class="text-game-white bg-game-base_button rounded-sm text-lg px-4 py-2 my-1"
         (click)="resetGame()">
         Nueva partida
       </button>
@@ -19,15 +19,15 @@
         <!-- Bloque: Puntos -->
         <div class="flex flex-col items-center bg-game_base_grid text-game_base_cell_2
           text-base rounded-sm px-3 py-1 min-w-[70px] max-w-[110px]">
-          <span>Puntos</span>
-          <p class="text-game-white text-lg truncate max-w-full">{{ score }}</p>
+          <span class="text-lg">Puntos</span>
+          <p class="text-game-white text-xl truncate max-w-full">{{ score }}</p>
         </div>
 
         <!-- Bloque: Mejor -->
         <div class="flex flex-col items-center bg-game_base_grid text-game_base_cell_2
           text-base rounded-sm px-3 py-1 min-w-[70px] max-w-[110px]">
-          <span>Mejor</span>
-          <p class="text-game-white text-lg truncate max-w-full">{{ bestScore }}</p>
+          <span class="text-lg">Mejor</span>
+          <p class="text-game-white text-xl truncate max-w-full">{{ bestScore }}</p>
         </div>
       </div>
     </div>
@@ -55,7 +55,7 @@
     <a href="https://github.com/RMdelbosque/game-2048" target="_blank" rel="noopener noreferrer"
       class="flex items-center gap-2 px-4 py-2 text-white bg-gray-900 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-md transition-all duration-200 shadow-sm">
       <i class="fa-brands fa-github text-2xl"></i>
-      <span class="font-medium">Abrir en GitHub</span>
+      <span class="text-lg">Abrir en GitHub</span>
     </a>
   </div>
 
