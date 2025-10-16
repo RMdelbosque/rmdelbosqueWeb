@@ -1,5 +1,4 @@
-<div class="max-w-4xl mx-auto px-6 py-16">
-
+<div class="max-w-4xl mx-auto px-6 py-6">
   <!-- Título -->
   <h2 class="text-4xl mb-10 text-center text-gray-900 dark:text-white transition-colors duration-500">
     📩 <span>Contáctame</span>
@@ -7,7 +6,7 @@
 
   <!-- Sección de contacto directo -->
   <div class="flex flex-wrap justify-center gap-4 mb-12">
-    <a href="https://wa.me/34654859387" target="_blank" rel="noopener noreferrer" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group
+    <a href="https://wa.me/34654859387" target="_blank" rel="noopener noreferrer" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden  text-lg font-medium text-gray-900 rounded-lg group
       bg-gradient-to-br from-green_3 to-green_5
       group-hover:from-green_3 group-hover:to-green_5
       dark:text-white dark:hover:text-gray-900
@@ -19,7 +18,7 @@
       </span>
     </a>
 
-    <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group
+    <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden  text-lg font-medium text-gray-900 rounded-lg group
     bg-gradient-to-br
     from-green_3 to-green_5
     group-hover:from-green_3 group-hover:to-green_5
@@ -35,7 +34,7 @@
       </span>
     </button>
 
-    <a href="mailto:rodrigo.m.delbosque@gmail.com" target="_blank" rel="noopener noreferrer" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group
+    <a href="mailto:rodrigo.m.delbosque@gmail.com" target="_blank" rel="noopener noreferrer" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden  text-lg font-medium text-gray-900 rounded-lg group
       bg-gradient-to-br from-green_3 to-green_5
       group-hover:from-green_3 group-hover:to-green_5
       dark:text-white dark:hover:text-gray-900
@@ -55,7 +54,8 @@
     <form (submit)="sendEmail($event)" class="grid gap-6">
       <!-- Nombre -->
       <div>
-        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white transition-colors duration-500">Nombre *</label>
+        <label class="block mb-2 **:text-lg text-gray-900 dark:text-white transition-colors duration-500">Nombre *</label>
+
         <input type="text" [(ngModel)]="formData.name" name="name" required
           class="w-full p-3 rounded-md border border-green_3/30 bg-transparent text-gray-900 dark:text-white
                  focus:outline-none focus:ring-2 focus:ring-green_4 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:shadow-lg hover:shadow-green_3/50 ">
@@ -63,7 +63,8 @@
 
       <!-- Correo -->
       <div>
-        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white transition-colors duration-500">Correo electrónico *</label>
+        <label class="block mb-2  text-lg font-medium text-gray-900 dark:text-white transition-colors duration-500">Correo electrónico *</label>
+
         <input type="email" [(ngModel)]="formData.email" name="email" required
           class="w-full p-3 rounded-md border border-green_3/30 bg-transparent text-gray-900 dark:text-white
                  focus:outline-none focus:ring-2 focus:ring-green_4 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:shadow-lg hover:shadow-green_3/50">
@@ -71,7 +72,7 @@
 
       <!-- Teléfono -->
       <div>
-        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white transition-colors duration-500">Teléfono</label>
+        <label class="block mb-2  text-lg font-medium text-gray-900 dark:text-white transition-colors duration-500">Teléfono</label>
         <input type="tel" [(ngModel)]="formData.phone" name="phone"
           class="w-full p-3 rounded-md border border-green_3/30 bg-transparent text-gray-900 dark:text-white
                  focus:outline-none focus:ring-2 focus:ring-green_4 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:shadow-lg hover:shadow-green_3/50">
@@ -79,7 +80,7 @@
 
       <!-- Mensaje -->
       <div>
-        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white transition-colors duration-500">Mensaje *</label>
+        <label class="block mb-2  text-lg font-medium text-gray-900 dark:text-white transition-colors duration-500">Mensaje *</label>
         <textarea [(ngModel)]="formData.message" name="message" rows="4" required
           class="w-full p-3 rounded-md border border-green_3/30 bg-transparent text-gray-900 dark:text-white
                  focus:outline-none focus:ring-2 focus:ring-green_4 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:shadow-lg hover:shadow-green_3/50"></textarea>
@@ -87,7 +88,7 @@
 
       <!-- Botón de envío -->
       <button type="submit" [disabled]="sending"
-        class="w-full py-3 px-5  rounded-md text-black bg-gradient-to-br from-green_3 to-green_5
+        class="w-full py-3 px-5 text-lg rounded-md text-black bg-gradient-to-br from-green_3 to-green_5
                hover:from-green_4 hover:to-green_5 focus:ring-2 focus:ring-green_2
                disabled:opacity-50 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:shadow-lg hover:shadow-green_3/50">
         {{ sending ? 'Enviando...' : 'Enviar mensaje' }}
@@ -95,10 +96,10 @@
 
       <!-- Mensajes -->
       @if (success) {
-      <p class="text-green_4 text-sm mt-2 text-center">{{ success }}</p>
+      <p class="text-green_4  text-lg mt-2 text-center">{{ success }}</p>
       }
       @if (error) {
-      <p class="text-red-500 text-sm mt-2 text-center">{{ error }}</p>
+      <p class="text-red-500  text-lg mt-2 text-center">{{ error }}</p>
       }
     </form>
   </div>

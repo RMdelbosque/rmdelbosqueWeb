@@ -8,7 +8,7 @@ export const SKILLS: Skill[] = [
   {name: 'HTML'},
   {name: 'JavaScript / TypeScript'},
   {name: 'CSS'},
-  {name: 'ailwindCSS / Bootstrap'},
+  {name: 'TailwindCSS / Bootstrap'},
   {name: 'Node.js'},
   {name: 'Git / GitHub'},
   {name: 'MySQL / SQL Server / SQLite'},
