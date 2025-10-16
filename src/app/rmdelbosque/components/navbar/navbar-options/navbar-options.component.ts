@@ -24,7 +24,7 @@ export class NavbarOptionsComponent {
       route: 'about'
     },
     {
-      label: 'Portolio',
+      label: 'Portfolio',
       route: 'portfolio'
     },
     {
