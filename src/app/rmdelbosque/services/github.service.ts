@@ -27,7 +27,7 @@ export class GithubService {
   })
 
   loadGitHubRepos() {
-    const allowedRepos = ['rmdelbosqueWeb', 'game-2048', '03-gifs-app', 'Spring-Boot-Films'];
+    const allowedRepos = ['rmdelbosqueWeb', 'game-2048', '03-gifs-app', 'Spring-Boot-Films', 'chat-ia'];
     this.http.get<GithubRepo[]>('https://api.github.com/users/RMdelbosque/repos?sort=updated').subscribe({
       next: (resp) => { // 🔹 Filtramos sólo los repos permitidos
         const filtered = resp.filter(repo => allowedRepos.includes(repo.name)); this.gihubRepos.set(filtered); this.gihubReposLoading.set(false); console.info('Repos filtrados:', filtered);
