@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterLinkActive } from '@angular/router';
+import { RouterLinkActive, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-card-game',
-  imports: [RouterLinkActive],
+  imports: [RouterLink],
   templateUrl: './card_game.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

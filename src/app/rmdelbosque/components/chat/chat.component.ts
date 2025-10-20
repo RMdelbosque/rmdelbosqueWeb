@@ -40,7 +40,6 @@ export class ChatComponent {
 
     try {
       const response = await fetch('https://rmdelbosque-chat-server.onrender.com/api/chat', {
-      // const response = await fetch('https://rmdelbosque-chat-server.onrender.com/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message }),
