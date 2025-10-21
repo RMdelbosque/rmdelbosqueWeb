@@ -23,7 +23,7 @@
       <button (click)="toggleChat()" class="text-black text-xl hover:text-gray-300">✖</button>
     </div>
 
-    <div class="flex-1 overflow-y-auto p-3 space-y-2 text-base">
+    <div #messagesContainer class="flex-1 overflow-y-auto p-3 space-y-2 text-base">
       @for (msg of messages(); track $index) {
       <div [class.text-right]="msg.sender === 'user'" [class.text-left]="msg.sender === 'bot'">
         <div [ngClass]="{
@@ -31,6 +31,16 @@
                 'bg-gray-200 dark:bg-gray-700 dark:text-gray-100 mr-auto': msg.sender === 'bot'
               }" class="px-3 py-2 rounded-lg max-w-[80%] inline-block whitespace-pre-wrap">
           {{ msg.text }}
+        </div>
+      </div>
+      }
+
+      <!-- Indicador de "Escribiendo..." -->
+      @if (loading()) {
+      <div class="text-left">
+        <div
+          class="bg-gray-200 dark:bg-gray-700 dark:text-gray-100 mr-auto px-3 py-2 rounded-lg max-w-[60%] inline-block animate-pulse">
+          <span class="italic opacity-80">Escribiendo...</span>
         </div>
       </div>
       }

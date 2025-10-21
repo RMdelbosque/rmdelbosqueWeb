@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, effect, ElementRef, signal, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,22 +8,30 @@ import { CommonModule } from '@angular/common';
   templateUrl: './chat.component.html',
 })
 export class ChatComponent {
-  // Estado del chat (visible u oculto)
   isOpen = signal(false);
-
-  // Historial de mensajes
+  userMessage = signal('');
+  loading = signal(false);
   messages = signal<{ sender: 'user' | 'bot'; text: string }[]>([
     { sender: 'bot', text: '👋 ¡Hola! Soy el asistente de Rodrigo del Bosque. ¿En qué puedo ayudarte?' },
   ]);
 
-  // Mensaje actual del usuario
-  userMessage = signal('');
-
-  // Cargando respuesta
-  loading = signal(false);
-
   // 👉 Cambia esta URL por la de tu servidor en Render
-  private readonly API_URL = 'https://rmdelbosque-chat-server.onrender.com/';
+  private readonly API_URL = 'https://rmdelbosque-chat-server.onrender.com/api/chat'
+
+  @ViewChild('messagesContainer') messagesContainer!: ElementRef<HTMLDivElement>;
+
+  constructor() {
+    // 🔄 Efecto: cada vez que cambian los mensajes o el estado de carga, bajamos el scroll
+    effect(() => {
+      this.messages();
+      this.loading();
+
+      setTimeout(() => {
+        const el = this.messagesContainer?.nativeElement;
+        if (el) el.scrollTop = el.scrollHeight;
+      }, 50);
+    });
+  }
 
   toggleChat() {
     this.isOpen.update(v => !v);
