@@ -29,9 +29,9 @@ font-family: calibri, "Helvetica", sans-serif;
   }
 }
 
-.hover\\:animate-shake:hover {
+/* .hover\\:animate-shake:hover {
   animation: shake 0.2s ease-in-out;
-}
+} */
 
 .stroke {
 
