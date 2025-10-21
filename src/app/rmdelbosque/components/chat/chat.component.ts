@@ -64,7 +64,7 @@ export class ChatComponent {
         ...m,
         {
           sender: 'bot',
-          text: '😅 Ups, parece que hubo un problema. Puedes contactar directamente con Rodrigo en rodrigo@rmdelbosque.com o por WhatsApp.',
+          text: '😅 Ups, parece que hubo un problema. Puedes contactar directamente con Rodrigo en rodrigo.m.delbosque@gmail.com o al 654 85 93 87.',
         },
       ]);
     } finally {
