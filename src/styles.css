@@ -33,6 +33,11 @@ font-family: calibri, "Helvetica", sans-serif;
   animation: shake 0.2s ease-in-out;
 } */
 
+/* .hover\\:animate-shake:hover {
+  animation: shake 0.2s ease-in-out;
+} */
+
+
 .stroke {
 
   -webkit-text-stroke-width: 0.5px;
@@ -99,9 +104,6 @@ font-family: calibri, "Helvetica", sans-serif;
   }
 }
 
-.hover\\:animate-shake:hover {
-  animation: shake 0.2s ease-in-out;
-}
 
 
 
